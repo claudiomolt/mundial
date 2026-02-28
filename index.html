@@ -165,6 +165,25 @@
     }
     .hero-scroll-hint svg { width: 20px; opacity: 0.8; }
 
+    /* Sol de Argentina */
+    .sol-argentina{margin-bottom:1rem;animation:solSpin 30s linear infinite}
+    @keyframes solSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+    .sol-rays{animation:solRayPulse 3s ease-in-out infinite}
+    @keyframes solRayPulse{0%,100%{opacity:1}50%{opacity:.7}}
+
+    /* 3 Estrellas */
+    .hero-stars{display:flex;gap:.6rem;margin-bottom:.5rem}
+    .hero-star{font-size:2.2rem;color:#F6B40E;text-shadow:0 0 20px rgba(246,180,14,.6);animation:starPulse 2s ease-in-out infinite}
+    .hero-star:nth-child(2){animation-delay:.3s}
+    .hero-star:nth-child(3){animation-delay:.6s}
+    @keyframes starPulse{0%,100%{transform:scale(1);text-shadow:0 0 20px rgba(246,180,14,.6)}50%{transform:scale(1.15);text-shadow:0 0 40px rgba(246,180,14,.9)}}
+
+    /* Somos Campeones */
+    .hero-champions{font-family:var(--font-display);font-size:clamp(1.2rem,4vw,2rem);letter-spacing:.3em;color:#F6B40E;text-shadow:0 2px 20px rgba(246,180,14,.4);margin-bottom:.5rem}
+
+    /* Obelisco */
+    .obelisco-wrap{position:absolute;right:8%;bottom:5%;pointer-events:none;z-index:0}
+
     /* ════════════════════════════════
        COUNTDOWN
     ════════════════════════════════ */
@@ -640,8 +659,48 @@
   <img class="hero-logo reveal"
        src="https://raw.githubusercontent.com/lacrypta/branding/main/title/512-white.png"
        alt="La Crypta" loading="eager" />
+  <!-- Sol de Argentina girando -->
+  <div class="sol-argentina reveal" style="transition-delay:0.05s">
+    <svg viewBox="0 0 200 200" width="120" height="120">
+      <g transform="translate(100,100)">
+        <circle r="28" fill="#F6B40E"/>
+        <g class="sol-rays">
+          <g id="ray-group">
+            <polygon points="0,-38 4,-65 0,-58 -4,-65" fill="#F6B40E"/>
+            <polygon points="0,-42 6,-72 0,-62 -6,-72" fill="#F6B40E" transform="rotate(22.5)"/>
+          </g>
+          <use href="#ray-group" transform="rotate(45)"/>
+          <use href="#ray-group" transform="rotate(90)"/>
+          <use href="#ray-group" transform="rotate(135)"/>
+          <use href="#ray-group" transform="rotate(180)"/>
+          <use href="#ray-group" transform="rotate(225)"/>
+          <use href="#ray-group" transform="rotate(270)"/>
+          <use href="#ray-group" transform="rotate(315)"/>
+        </g>
+        <!-- Face -->
+        <circle cx="-8" cy="-5" r="3" fill="#c48a0a"/>
+        <circle cx="8" cy="-5" r="3" fill="#c48a0a"/>
+        <path d="M-10,6 Q0,16 10,6" stroke="#c48a0a" stroke-width="2.5" fill="none"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- 3 estrellas -->
+  <div class="hero-stars reveal" style="transition-delay:0.08s">
+    <span class="hero-star">★</span><span class="hero-star">★</span><span class="hero-star">★</span>
+  </div>
+
   <div class="hero-year reveal" style="transition-delay:0.1s">MUNDIAL<br>2026</div>
+  <div class="hero-champions reveal" style="transition-delay:0.15s">SOMOS CAMPEONES</div>
   <p class="hero-sub reveal" style="transition-delay:0.2s">Viví todos los partidos en La Crypta 🇦🇷</p>
+
+  <!-- Obelisco SVG -->
+  <div class="obelisco-wrap">
+    <svg class="obelisco" viewBox="0 0 60 300" width="40" height="200" opacity="0.08">
+      <path d="M30,0 L36,40 L38,280 L42,300 L18,300 L22,280 L24,40 Z" fill="white"/>
+      <rect x="26" y="120" width="8" height="16" rx="1" fill="rgba(0,0,0,0.3)"/>
+    </svg>
+  </div>
   <span class="hero-badge reveal" style="transition-delay:0.3s">
     ⚡ Bitcoin Accepted &nbsp;·&nbsp; Buenos Aires
   </span>

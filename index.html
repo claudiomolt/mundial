@@ -186,7 +186,7 @@ body {
 /* ============ COUNTDOWN ============ */
 .countdown-section {
   position: relative; z-index: 1;
-  padding: 5rem 1.5rem;
+  padding: 3rem 1.5rem 5rem;
   background: linear-gradient(180deg, var(--navy) 0%, var(--navy-light) 50%, var(--navy) 100%);
   text-align: center;
 }
@@ -200,7 +200,7 @@ body {
 
 .countdown-grid {
   display: flex; justify-content: center; align-items: center;
-  gap: clamp(0.8rem, 3vw, 2.5rem);
+  gap: clamp(1.5rem, 5vw, 4rem);
   flex-wrap: wrap;
 }
 
@@ -214,8 +214,8 @@ body {
 
 .odometer-digit {
   position: relative;
-  width: clamp(38px, 8vw, 64px);
-  height: clamp(60px, 12vw, 96px);
+  width: clamp(44px, 10vw, 76px);
+  height: clamp(68px, 14vw, 110px);
   background: linear-gradient(180deg, #0f1c30 0%, #162440 50%, #0f1c30 100%);
   border-radius: 8px;
   overflow: hidden;
@@ -237,28 +237,28 @@ body {
 
 .odometer-num {
   width: 100%;
-  height: clamp(60px, 12vw, 96px);
+  height: clamp(68px, 14vw, 110px);
   display: flex; align-items: center; justify-content: center;
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 5vw, 3.2rem);
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
   color: var(--white);
   text-shadow: 0 0 10px rgba(117,170,219,0.3);
 }
 
 .countdown-unit-label {
   font-family: var(--font-heading);
-  font-size: clamp(0.6rem, 1.5vw, 0.8rem);
+  font-size: clamp(0.7rem, 1.8vw, 0.95rem);
   text-transform: uppercase; letter-spacing: 0.4em;
   color: var(--text-dim);
 }
 
 .countdown-separator {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(2.5rem, 6vw, 4rem);
   color: var(--celeste);
   opacity: 0.4;
   align-self: flex-start;
-  margin-top: clamp(10px, 2vw, 16px);
+  margin-top: clamp(12px, 3vw, 22px);
   animation: blink-sep 2s ease-in-out infinite;
 }
 @keyframes blink-sep { 0%, 100% { opacity: 0.4; } 50% { opacity: 0.1; } }
@@ -482,7 +482,7 @@ body {
   .hero-logo { width: min(260px, 65vw); }
   .stars-row { font-size: 1.8rem; letter-spacing: 0.3rem; }
   .countdown-separator { display: none; }
-  .countdown-grid { gap: 1rem; }
+  .countdown-grid { gap: 1.5rem; }
   .match-teams { flex-direction: column; gap: 0.4rem; }
   .match-vs { font-size: 0.75rem; }
   .messi-content { padding: 3rem 1.5rem; }
